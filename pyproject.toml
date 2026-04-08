@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chse"
+version = "0.1.0"
+description = "Contested Hierarchy with Social Embedding — formal theory implementation"
+authors = [{ name = "Nityahapani" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "jupyter>=1.0",
+    "ipykernel>=6.0",
+    "nbformat>=5.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["chse*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--tb=short"
